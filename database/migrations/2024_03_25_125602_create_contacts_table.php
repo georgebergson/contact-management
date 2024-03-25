@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name', 255); // Limite de 255 caracteres para o nome
             $table->char('contact', 9)->unique(); // Número de contato com exatamente 9 caracteres
             $table->string('email_address')->unique(); // Endereço de e-mail único
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();
         });
     }
