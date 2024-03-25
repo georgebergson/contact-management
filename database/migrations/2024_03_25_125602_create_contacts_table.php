@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255); // Limite de 255 caracteres para o nome
-            $table->char('contact', 9); // Número de contato com exatamente 9 caracteres
+            $table->char('contact', 9)->unique(); // Número de contato com exatamente 9 caracteres
             $table->string('email_address')->unique(); // Endereço de e-mail único
             $table->timestamps();
         });
