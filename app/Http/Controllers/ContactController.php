@@ -15,7 +15,7 @@ class ContactController extends Controller
           // Busca todos os contatos
           $contacts = Contact::paginate(5);
           // Retorna a view index com os contatos
-          return view('home', ['contacts' => $contacts]);
+          return view('contacts.index', ['contacts' => $contacts]);
     }
 
     /**

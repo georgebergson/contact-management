@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <div class="max-w-7xl mx-auto p-6 lg:p-8">
-        @include('contacts.index')
+    <div class="w-2/5 mx-auto p-6 lg:p-8">
+        @yield('dynamic_content')
     </div>
 @endsection
