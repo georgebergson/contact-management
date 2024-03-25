@@ -1,10 +1,9 @@
 @extends('home')
 
 @section('dynamic_content')
-
-
-<div class="block  p-6 bg-white border border-gray-100 rounded-lg shadow hover:bg-gray-50 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" method="POST" action="{{ route('contacts.store') }}">
-    <form class="w-full mx-auto space-y-3">
+<div class="block  p-6 bg-white border border-gray-100 rounded-lg shadow hover:bg-gray-50 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+    <form class="w-full mx-auto space-y-3" method="POST" action="{{ route('contacts.store') }}">
+        @csrf
         <div class="name">
             <label for="website-admin" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Name</label>
             <div class="flex">
@@ -15,6 +14,9 @@
                 </span>
                 <input type="text" id="name" name="name" class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your First Name">
             </div>
+            @error('name')
+            <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
+            @enderror
         </div>
         <div class="contact">
             <label for="website-admin" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Contact</label>
@@ -27,6 +29,9 @@
                 </span>
                 <input type="tel" id="contact" name="contact" class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="(00) 0000-0000">
             </div>
+            @error('contact')
+            <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
+            @enderror
         </div>
         <div class="email_address">
             <label for="website-admin" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">E-mail Address</label>
@@ -38,19 +43,22 @@
                 </span>
                 <input type="email" id="email_address" name="email_address" class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="email@example.com">
             </div>
+            @error('email_address')
+            <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
+            @enderror
+        </div>
+
+
+        <div class="flex justify-end">
+            <button type="submit" class="my-5 flex space-x-2 text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-3 text-center  mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                    <path d="M5.25 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM2.25 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM18.75 7.5a.75.75 0 0 0-1.5 0v2.25H15a.75.75 0 0 0 0 1.5h2.25v2.25a.75.75 0 0 0 1.5 0v-2.25H21a.75.75 0 0 0 0-1.5h-2.25V7.5Z" />
+                </svg>
+
+                <span>Save New Contact</span>
+            </button>
         </div>
     </form>
-
-    <div class="flex justify-end">
-        <button type="submit" class="my-5 flex space-x-2 text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-3 text-center  mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                <path d="M5.25 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM2.25 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM18.75 7.5a.75.75 0 0 0-1.5 0v2.25H15a.75.75 0 0 0 0 1.5h2.25v2.25a.75.75 0 0 0 1.5 0v-2.25H21a.75.75 0 0 0 0-1.5h-2.25V7.5Z" />
-            </svg>
-
-            <span>Save New Contact</span>
-        </button>
-    </div>
-
 </div>
 
 

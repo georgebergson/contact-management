@@ -13,7 +13,7 @@ class ContactController extends Controller
     public function index()
     {
           // Busca todos os contatos
-          $contacts = Contact::paginate(5);
+          $contacts = Contact::orderBy('id', 'DESC')->paginate(5);
           // Retorna a view index com os contatos
           return view('contacts.index', ['contacts' => $contacts]);
     }
