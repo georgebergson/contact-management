@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <div class="w-2/5 mx-auto p-6 lg:p-8">
+
         @yield('dynamic_content')
-    </div>
+
 @endsection
