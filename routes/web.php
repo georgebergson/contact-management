@@ -7,3 +7,4 @@ use App\Http\Controllers\ContactCreateController;
 Route::get('/', [ContactController::class, 'index'])->name('contacts.index');
 
 Route::get('/create', [ContactCreateController::class, 'index'])->name('contacts.create');
+Route::post('/create', [ContactCreateController::class, 'store'])->name('contacts.store');
