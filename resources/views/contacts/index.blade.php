@@ -2,6 +2,7 @@
 
 @section('dynamic_content')
 <div class="w-3/5 mx-auto p-6 lg:p-8">
+    @auth
     <div class="flex justify-end">
         <a href="{{ route('contacts.create') }}" type="button" class="flex space-x-2 text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-1.5 text-center  mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
@@ -11,6 +12,7 @@
             <span>Create New Contact</span>
         </a>
     </div>
+    @endauth
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
@@ -18,10 +20,11 @@
                     <th scope="col" class="px-6 py-3">
                         Name
                     </th>
-
+                    @auth
                     <th scope="col" class="px-6 py-3">
                         Action
                     </th>
+                    @endauth
                 </tr>
             </thead>
             <tbody>
@@ -30,7 +33,7 @@
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                         {{ $contact->name }}
                     </th>
-
+                    @auth
                     <td class="flex px-1 py-4 justify-end">
 
                         <a href="{{ route('contacts.show', $contact->id) }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-1 space-x-2 text-center inline-flex items-center me-2">
@@ -62,9 +65,8 @@
                                 <span>Delete</span>
                             </button>
                         </form>
-
-
                     </td>
+                    @endauth
                 </tr>
                 @endforeach
 
