@@ -5,7 +5,7 @@
     <form class="w-full mx-auto space-y-3" method="POST" action="{{ route('contacts.store') }}">
         @csrf
         <div class="name">
-            <label for="website-admin" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+            <label for="name" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Name</label>
             <div class="flex">
                 <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
                     <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -19,7 +19,7 @@
             @enderror
         </div>
         <div class="contact">
-            <label for="website-admin" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Contact</label>
+            <label for="contact" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Contact</label>
             <div class="flex">
                 <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-gray-500 dark:text-gray-400">
@@ -34,7 +34,7 @@
             @enderror
         </div>
         <div class="email_address">
-            <label for="website-admin" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">E-mail Address</label>
+            <label for="email_address" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">E-mail Address</label>
             <div class="flex">
                 <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-gray-500 dark:text-gray-400">
